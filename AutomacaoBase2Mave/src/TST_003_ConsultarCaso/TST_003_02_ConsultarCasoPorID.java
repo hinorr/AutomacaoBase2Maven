@@ -71,16 +71,14 @@ public class TST_003_02_ConsultarCasoPorID {
 					 System.out.println(linha.getText());
 					 break;
 				 }
-				 
-				 
+				 			 
 			 }
 			
 															
 			Thread.sleep(2000);
 
 			
-			try{
-			
+			try{			
 				
 				assertTrue(casoEncontrado);
 				//Validação da mensagem
