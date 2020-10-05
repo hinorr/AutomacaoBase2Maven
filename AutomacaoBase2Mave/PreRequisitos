@@ -1,0 +1,17 @@
+
+
+TST_001_02_LoginValido
+	1. Ter um usuário habilitado no sistema com as permissões válidas: usuario "luciano.silva" e senha "132313";
+	
+TST_001_01_LoginInvalido
+	1. Não ter nenhum usuário habilitado no sistema com as permissões : usuario "Fernando" e senha "111111";
+
+TST_002_01_RelatarCasoCamposObgPreenchidos
+	1. Ter cadastrado no sistema um projeto com a descrição "Luciano Silva's Project"
+	2. Não ter nenhum Caso criado com o resumo "Botão Desligar não é exibido"
+	
+TST_002_02_RelatarCasoCamposObgNaoPreenchidos
+	1. Ter cadastrado no sistema um projeto com a descrição "Luciano Silva's Project"
+
+TST_003_01_ConsultarCasoDeProjetoPorResumo
+	1. Ter cadastrado no sistema um caso com a descrição "Botão Desligar não é exibido" para o projeto ""Luciano Silva's Project""
