@@ -5,6 +5,8 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
 import TST_001_Login.TST_001_02_LoginValido;
+import TST_003_ConsultarCaso.TST_003_01_ConsultarCasoDeProjetoPorResumo;
+import TST_003_ConsultarCaso.TST_003_02_ConsultarCasoPorID;
 
 
 
@@ -17,6 +19,9 @@ import TST_001_Login.TST_001_02_LoginValido;
 	TST_001_02_LoginValido.class,
 	//TST_001_01_LoginInvalido.class,
 	//TST_002_01_RelatarCasoCamposObgPreenchidos.class,
+	//TST_003_01_ConsultarCasoDeProjetoPorResumo.class,
+	//TST_003_02_ConsultarCasoPorID.class,
+	
 
 })
 

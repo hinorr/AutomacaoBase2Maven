@@ -9,6 +9,7 @@ public class Caso {
 	private String resumo;
 	private String descricao;
 	private String msgErroRelatarCasoSemResumo;
+	private String Id;
 	
 	public Caso() {
 		
@@ -22,7 +23,8 @@ public class Caso {
 		
 		this.msgErroRelatarCasoSemResumo = "Um campo necessário 'Resumo' estava vazio. Por favor, verifique novamente"
 				+ " suas entradas.";
-	
+		
+		this.Id = "0004901";
 		
 		
 		
@@ -82,6 +84,14 @@ public class Caso {
 
 	public void setMsgErroRelatarCasoSemResumo(String msgErroRelatarCasoSemResumo) {
 		this.msgErroRelatarCasoSemResumo = msgErroRelatarCasoSemResumo;
+	}
+
+	public String getId() {
+		return Id;
+	}
+
+	public void setId(String id) {
+		Id = id;
 	}
 	
 	

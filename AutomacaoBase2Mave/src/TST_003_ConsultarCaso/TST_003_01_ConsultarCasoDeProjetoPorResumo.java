@@ -88,13 +88,13 @@ public class TST_003_01_ConsultarCasoDeProjetoPorResumo {
 				//Validação da mensagem
 				loggerTestResult.testResult("Aprovado");
 				
-			}catch (AssertionError erroValidaMensagemCadastroDeAvaliado){
+			}catch (AssertionError erroValidaConsultarCasoDeProjetoPorResumo){
     		
-				loggerDebug.debug("Erro ao Executar o caso de Teste: " + erroValidaMensagemCadastroDeAvaliado);
+				loggerDebug.debug("Erro ao Executar o caso de Teste: " + erroValidaConsultarCasoDeProjetoPorResumo);
     			loggerTestResult.testResult("Reprovado");
     			
     			//Avisa a api junit sobre o erro no caso de teste
-    			throw erroValidaMensagemCadastroDeAvaliado;
+    			throw erroValidaConsultarCasoDeProjetoPorResumo;
 			
     		}finally{
     
