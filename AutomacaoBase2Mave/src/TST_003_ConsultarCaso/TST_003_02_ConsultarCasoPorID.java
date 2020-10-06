@@ -70,7 +70,7 @@ public class TST_003_02_ConsultarCasoPorID {
 			
 			try{			
 				
-				assertTrue(casoEncontrado);
+				assertTrue(this.casoEncontrado);
 				loggerTestResult.testResult("Aprovado");
 				
 			}catch (AssertionError erroValidaMensagemConsultarCasoPorID){

@@ -81,7 +81,7 @@ public class TST_003_01_ConsultarCasosPorProjeto {
 			try{
 			
 				
-				assertTrue(casoEncontrado);
+				assertTrue(this.casoEncontrado);
 				loggerTestResult.testResult("Aprovado");
 				
 			}catch (AssertionError erroValidaConsultarCasoDeProjetoPorResumo){

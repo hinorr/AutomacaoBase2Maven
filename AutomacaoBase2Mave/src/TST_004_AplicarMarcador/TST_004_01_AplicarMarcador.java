@@ -86,8 +86,6 @@ public class TST_004_01_AplicarMarcador {
 			  
 			//Consultar Caso com marcador 	
 			WebElement tabelaValidador = driver.findElement(By.cssSelector("table.width100:nth-child(6)"));
-			
-			//List<WebElement> trValidador = tabelaValidador.findElements(By.cssSelector("tr"));
 			List<WebElement> tdValidador = tabelaValidador.findElements(By.cssSelector("td"));
 			
 			 for (WebElement linha : tdValidador) {
@@ -104,7 +102,7 @@ public class TST_004_01_AplicarMarcador {
 
 			
 			try{
-				assertTrue(marcadorAplicado);
+				assertTrue(this.marcadorAplicado);
 				loggerTestResult.testResult("Aprovado");
 				
 			}catch (AssertionError erroValidaAplicarMarcador){

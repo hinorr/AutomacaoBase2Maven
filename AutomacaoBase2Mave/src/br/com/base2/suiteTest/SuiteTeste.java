@@ -6,8 +6,8 @@ import org.junit.runners.Suite;
 
 import TST_001_Login.TST_001_01_LoginInvalido;
 import TST_001_Login.TST_001_02_LoginValido;
-import TST_002_RelatarCasos.TST_002_01_RelatarCasoCamposObgPreenchidos;
-import TST_002_RelatarCasos.TST_002_02_RelatarCasoCamposObgNaoPreenchidos;
+import TST_002_RelatarCaso.TST_002_01_RelatarCasoCamposObgPreenchidos;
+import TST_002_RelatarCaso.TST_002_02_RelatarCasoCamposObgNaoPreenchidos;
 import TST_003_ConsultarCaso.TST_003_01_ConsultarCasosPorProjeto;
 import TST_003_ConsultarCaso.TST_003_02_ConsultarCasoPorID;
 import TST_004_AplicarMarcador.TST_004_01_AplicarMarcador;

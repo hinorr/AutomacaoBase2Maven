@@ -1,4 +1,4 @@
-package TST_002_RelatarCasos;
+package TST_002_RelatarCaso;
 
 
 import org.junit.*;
@@ -87,14 +87,8 @@ public class TST_002_01_RelatarCasoCamposObgPreenchidos {
 			driver.findElement(By.cssSelector("input[value='Enviar Relatório']")).click();
 			Thread.sleep(4000);
 			
-			
-			/*
-			 * Fazendo a validação do cadastro
-			 * O correto seria com a validação da mensagem, porem o time é bem rapido, refatorar
-			 */
-			
+			//Fazendo a validação do cadastro
 			WebElement tabela = driver.findElement(By.id("buglist"));				
-			//List<WebElement> tr = tabela.findElements(By.cssSelector("tr"));
 			List<WebElement> td = tabela.findElements(By.cssSelector("td"));
 			
 			 for (WebElement linha : td) {
@@ -109,7 +103,7 @@ public class TST_002_01_RelatarCasoCamposObgPreenchidos {
 			try{
 				
 				//Validação da mensagem
-				assertTrue(casoEncontrado);    
+				assertTrue(this.casoEncontrado);    
 				loggerTestResult.testResult("Aprovado");
 				
 			}catch (AssertionError erroValidaRelatarCasoCamposObgPreenchidos){

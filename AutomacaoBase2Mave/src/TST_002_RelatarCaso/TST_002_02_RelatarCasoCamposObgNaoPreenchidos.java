@@ -1,4 +1,4 @@
-package TST_002_RelatarCasos;
+package TST_002_RelatarCaso;
 
 
 import org.junit.*;
@@ -68,9 +68,7 @@ public class TST_002_02_RelatarCasoCamposObgNaoPreenchidos {
 			 * 	@param categoria;
 			 *	@param gravidade;
 			 *	@param perfil;
-			 *	
 			 *	@param descricao;
-			 *	
 			 */
 			
 			new Select(driver.findElement(By.name("category_id"))). selectByVisibleText(categoria.getTipo());
