@@ -56,8 +56,6 @@ public class TST_001_02_LoginValido{
 			try{
 				
 				assertEquals(userNameLogado, login.getLoginValido());
-				//assertEquals("coisa louc", login.getLoginValido());
-				
 				loggerTestResult.testResult("Aprovado");
 				
 			}catch (AssertionError erroValidaMensagemLoginValido){

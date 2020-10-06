@@ -1,26 +1,114 @@
 
 
 TST_001_02_LoginValido
-	1. Ter um usuário habilitado no sistema com as permissões válidas: usuario "luciano.silva" e senha "132313";
+
+	Pré-Requisitos
+		Ter um usuário habilitado no sistema com as permissões válidas: usuario "luciano.silva" e senha "132313";
+		
+	Passos:
+		Preencher o campo Username com o valor "luciano.silva";
+		Preencher o campo Password com o valor "132313";
+		Selecionar o botão "login";
+	
+	Resultados:
+		O usuário deve ter acesso ao sistema de acordo com as suas permissões;
+		O sistema deve exibir a informação "Accessando como: "luciano.silva";
 	
 TST_001_01_LoginInvalido
-	1. Não ter nenhum usuário habilitado no sistema com as permissões : usuario "Fernando" e senha "111111";
 
+	Pré-Requisitos:
+		Não ter nenhum usuário habilitado no sistema com as permissões : usuario "Fernando" e senha "111111";
+		
+	Passos:
+		Preencher o campo Username com o valor "Fernando";
+		Preencher o campo Password com o valor "111111";
+		Selecionar o botão "login";
+	
+	
+	Resultados:
+		O sistema não deve permitir que o usuário tenha acesso ao sistema;
+		O sietma deve exibir a seguinte mensagem "Your account may be disabled or blocked or the username/password you entered is incorrect."
+	
 TST_002_01_RelatarCasoCamposObgPreenchidos
-	1. Ter cadastrado no sistema um projeto com a descrição "Luciano Silva's Project"
-	2. Não ter nenhum Caso criado com o resumo "Botão Desligar não é exibido"
+	
+	Pré-Requisito:
+		Ter cadastrado no sistema um projeto com a descrição "Luciano Silva's Project"
+		Não ter nenhum Caso criado com o resumo "Botão Desligar não é exibido"
+		Estar logado no sistema com as devidas permissões para o usuário;
+		Não ter mais que uma página de Casos cadastrados para o mesmo Projeto;
+		
+	Passos:
+		No campo Projeto, selecionar o projeto "Luciano Silva's Project";
+		Clicar na opção "Relatar Caso" do menu horizontal;
+		Preencher todos os campos obrigatórios com os devidos valores;
+		Clicar no botão "Enviar Relatório";
+		
+	Resultados:
+		O sistema deve exibir a mensagem "Operação realizada com sucesso";
+		O sistema deve 	exibir na lista o Caso recém cadastrado;
 	
 TST_002_02_RelatarCasoCamposObgNaoPreenchidos
-	1. Ter cadastrado no sistema um projeto com a descrição "Luciano Silva's Project"
+	
+	Pré-Requisitos:
+		Ter cadastrado no sistema um projeto com a descrição "Luciano Silva's Project"
+		Estar logado no sistema com as devidas permissões para o usuário;
+	
+	Passos:
+		No campo Projeto, selecionar o projeto "Luciano Silva's Project";
+		Clicar na opção "Relatar Caso" do menu horizontal;
+		Preencher todos os campos obrigatórios com os devidos valores exceto o campo "Resumo";
+		Clicar no botão "Enviar Relatório";
+	
+	Resultados:
+		O sistema deve exibir a seguinte mensagem "Um campo necessário 'Resumo' estava vazio. Por favor, verifique novamente suas entradas."
+		O sistema não deve efetuar o cadastro do Caso;
 
-TST_003_01_ConsultarCasoDeProjetoPorResumo
-	1. Ter cadastrado no sistema um caso com a descrição "Botão Desligar não é exibido" para o projeto "Luciano Silva's Project"
+TST_003_01_ConsultarCasosPorProjeto
+
+	Pré-Requisitos:
+		Ter cadastrado no sistema um caso com o Resumo "Botão Desligar não é exibido" para o projeto "Luciano Silva's Project"
+		Estar logado no sistema com as devidas permissões para o usuário;
+		Não ter mais que uma página de Casos cadastrados para o mesmo Projeto;
+		
+	Passos:
+		No campo Projeto, selecionar o projeto "Luciano Silva's Project";
+		Clicar na opção "Ver Casos" do menu horizontal;
+	
+	Resultados:
+		O sistema deve exibir todos os casos cadastrados para o Projeto "Luciano Silva's Project";
+		O sistema deve exibir na lista o caso com o Resumo "Botão Desligar não é exibido";
 
 TST_003_02_ConsultarCasoPorID
-	1. Ter cadastrado no sistema um caso com o id "0004901" para o projeto "Luciano Silva's Project"
+
+	Pré-Requisitos
+		Ter cadastrado no sistema um caso com o id "0004901" para o projeto "Luciano Silva's Project"
+		Estar logado no sistema com as devidas permissões para o usuário;
+		Não ter mais que uma página de Casos cadastrados para o mesmo Projeto;
+
+	Passos:
+		Inserir o valor do Id do Caso "0004901" no campo de pesquisa;
+		Clicar no botão "Ir para";
+	
+	Resultados:
+		O sistema deve exibir os detalhes do Caso "0004901"
+	
 	
 TST_004_01_AplicarMarcador
-	1. Ter cadastrado no sistema um caso com o id "0004901"  sem nenhum marcado adicionado
-	2. Ter um marcador cadastrado no sistema do tipo "testeBase2"
+	
+	Pré-Requisitos:
+		Ter cadastrado no sistema um caso com o ID "0004901"  sem nenhum marcado adicionado;
+		Ter cadastrado no sistema um Marcador do tipo "testeBase2";
+		Não ter mais que uma página de Casos cadastrados para o mesmo Projeto;
+	
+	Passos:
+		No campo Projeto, selecionar o projeto "Luciano Silva's Project";
+		Clicar na opção "Ver Casos" do menu horizontal;
+		Selecionar na lista de Casos o Caso com ID  "0004901", clicando no próprio ID;
+		No campo "Marcadores atuais" selecionar o marcador com o tipo  "testeBase2";
+		Clicar no botão "Aplicar";
+	
+	Resultados:
+		O sistema deve manter aberta a tela com as informações do Caso;
+		O sistema deve exibir o campo "Aplicar Marcadores" com o registro do tipo de marcador "testeBase2";
 	
 	

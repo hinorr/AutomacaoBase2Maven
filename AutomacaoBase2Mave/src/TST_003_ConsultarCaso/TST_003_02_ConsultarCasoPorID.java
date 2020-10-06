@@ -53,19 +53,12 @@ public class TST_003_02_ConsultarCasoPorID {
 						
 			Thread.sleep(2000);
 				
-			
-			//WebElement tabela = driver.findElement(By.id("buglist"));
 			WebElement tabela = driver.findElement(By.cssSelector("table.width100:nth-child(6)"));
-			
-			//List<WebElement> tr = tabela.findElements(By.cssSelector("tr"));
 			List<WebElement> td = tabela.findElements(By.cssSelector("td"));
 			
 			 for (WebElement linha : td) {
-				 //System.out.println(linha.getText());
-				 
 				if( linha.getText().equalsIgnoreCase(caso.getId())){
-					 casoEncontrado = true;
-					 System.out.println(linha.getText());
+					 this.casoEncontrado = true;
 					 break;
 				 }
 				 			 

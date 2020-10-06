@@ -14,7 +14,7 @@ import br.com.base2.entidades.Caso;
 import br.com.base2.entidades.Projeto;
 
 
-public class TST_003_01_ConsultarCasoDeProjetoPorResumo {
+public class TST_003_01_ConsultarCasosPorProjeto {
   
 	private WebDriver driver;
 	private StringBuffer verificationErrors = new StringBuffer();
@@ -51,27 +51,25 @@ public class TST_003_01_ConsultarCasoDeProjetoPorResumo {
 			
 			/*
 			 * Selecionar Projeto Especifico
-			 * @param Luciano Silva's Project
+			 * @param "Luciano Silva's Project"
 			 */
 			new Select(driver.findElement(By.cssSelector("select[name='project_id']"))).selectByVisibleText(projeto.getNome());
 					
-			//Menu Ver Casos		
+			//Consultar todos os Casos cadastrados para o devido Projeto		
 			driver.findElement(By.cssSelector("a[href='/view_all_bug_page.php']")).click();
 		
 			
 			/*
-			 * Consultar Caso por Resumo
+			 * Validar o Caso específico pelo seu Resumo
+			 * @param  "Botão Desligar não é exibido"
 			 */
 			
 			WebElement tabela = driver.findElement(By.id("buglist"));				
-			//List<WebElement> tr = tabela.findElements(By.cssSelector("tr"));
 			List<WebElement> td = tabela.findElements(By.cssSelector("td"));
 			
 			 for (WebElement linha : td) {
-				// System.out.println(linha.getText());
-				 
 				 if( linha.getText().equalsIgnoreCase(caso.getResumo())){
-					 casoEncontrado = true;
+					 this.casoEncontrado = true;
 					 break;
 				 }
 			 }

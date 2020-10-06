@@ -100,7 +100,7 @@ public class TST_002_01_RelatarCasoCamposObgPreenchidos {
 			 for (WebElement linha : td) {
 				 
 				 if( linha.getText().equalsIgnoreCase(caso.getResumo())){
-					 casoEncontrado = true;
+					 this.casoEncontrado = true;
 					 break;
 				 }
 			 }
