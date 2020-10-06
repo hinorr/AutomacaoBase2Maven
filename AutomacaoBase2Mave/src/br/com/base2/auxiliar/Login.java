@@ -32,9 +32,7 @@ public class Login {
 			
 			//Seleção do botão Entrar
 			driver.findElement(By.className("button")).click();		
-			
-			
-			
+						
 		}
 		catch (Exception erro){
 			

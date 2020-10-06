@@ -1,4 +1,4 @@
-package br.com.base.arquivo.test.result;
+package br.com.base2.arquivo.test.result;
 
 import org.apache.log4j.Logger;
 

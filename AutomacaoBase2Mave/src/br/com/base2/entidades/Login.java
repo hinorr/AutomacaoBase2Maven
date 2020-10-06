@@ -61,8 +61,6 @@ public class Login {
 		this.msgUserInvalido = msgUserInvalido;
 	}
 	
-	
-
-	
+		
 	
 }

@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 
-
 public class Driver {
 		
 	private WebDriver driver;
@@ -22,13 +21,17 @@ public class Driver {
 		driver.get(baseUrl);
 		
 	}
-	 
-	
-	public WebDriver retornadrive() throws Exception {
-		
+
+
+	public WebDriver getDriver()  throws Exception{
 		return driver;
 	}
-		
+
+
+	public void setDriver(WebDriver driver) {
+		this.driver = driver;
+	}
+	
 	
 }
 

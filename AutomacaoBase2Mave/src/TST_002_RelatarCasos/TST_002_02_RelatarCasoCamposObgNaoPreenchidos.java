@@ -5,8 +5,9 @@ import org.junit.*;
 import static org.junit.Assert.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.Select;
-import br.com.base.arquivo.test.result.LogTestResult;
+
 import br.com.base2.arquivo.debug.LogDebug;
+import br.com.base2.arquivo.test.result.LogTestResult;
 import br.com.base2.auxiliar.Login;
 import br.com.base2.entidades.Caso;
 

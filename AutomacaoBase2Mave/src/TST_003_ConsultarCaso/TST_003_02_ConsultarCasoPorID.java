@@ -5,9 +5,9 @@ import org.junit.*;
 import static org.junit.Assert.*;
 import java.util.List;
 import org.openqa.selenium.*;
-import org.openqa.selenium.support.ui.Select;
-import br.com.base.arquivo.test.result.LogTestResult;
+
 import br.com.base2.arquivo.debug.LogDebug;
+import br.com.base2.arquivo.test.result.LogTestResult;
 import br.com.base2.auxiliar.Login;
 import br.com.base2.entidades.Caso;
 
@@ -57,7 +57,7 @@ public class TST_003_02_ConsultarCasoPorID {
 			//WebElement tabela = driver.findElement(By.id("buglist"));
 			WebElement tabela = driver.findElement(By.cssSelector("table.width100:nth-child(6)"));
 			
-			List<WebElement> tr = tabela.findElements(By.cssSelector("tr"));
+			//List<WebElement> tr = tabela.findElements(By.cssSelector("tr"));
 			List<WebElement> td = tabela.findElements(By.cssSelector("td"));
 			
 			 for (WebElement linha : td) {

@@ -5,8 +5,8 @@ import org.junit.*;
 import static org.junit.Assert.*;
 import org.openqa.selenium.*;
 
-import br.com.base.arquivo.test.result.LogTestResult;
 import br.com.base2.arquivo.debug.LogDebug;
+import br.com.base2.arquivo.test.result.LogTestResult;
 import br.com.base2.auxiliar.Driver;
 import br.com.base2.entidades.Login;
 
@@ -39,7 +39,7 @@ public class TST_001_02_LoginValido{
 		    
 		try{
 			
-			driver = _driver.retornadrive();			
+			driver = _driver.getDriver();			
 			
 			//Inserção dos valores para Usuário e Senha
 			driver.findElement(By.name("username")).sendKeys(login.getLoginValido());
