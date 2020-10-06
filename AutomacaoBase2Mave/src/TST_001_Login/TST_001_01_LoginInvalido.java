@@ -15,10 +15,10 @@ public class TST_001_01_LoginInvalido {
   
 	private WebDriver driver;
 	private StringBuffer verificationErrors = new StringBuffer();
-	private Login login;
 	private LogDebug loggerDebug;
 	private LogTestResult loggerTestResult;
 	private Driver _driver;
+	private Login login;
 	
 	
 	@Before

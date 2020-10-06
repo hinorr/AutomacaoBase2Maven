@@ -16,9 +16,9 @@ public class TST_003_02_ConsultarCasoPorID {
   
 	private WebDriver driver;
 	private StringBuffer verificationErrors = new StringBuffer();
-	private Login login;
 	private LogDebug loggerDebug;
 	private LogTestResult loggerTestResult;
+	private Login login;
 	private Caso caso;
 	private boolean casoEncontrado;
 		
@@ -28,9 +28,9 @@ public class TST_003_02_ConsultarCasoPorID {
 		
 		this.login = new Login();
 		this.loggerDebug = new LogDebug(this.getClass());
-		this.loggerTestResult = new LogTestResult(this.getClass());
+		this.loggerTestResult = new LogTestResult(this.getClass());	
+		this.casoEncontrado = false;
 		this.caso = new Caso();
-		casoEncontrado = false;
     
 	}
 

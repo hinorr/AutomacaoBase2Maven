@@ -11,17 +11,23 @@ import br.com.base2.arquivo.debug.LogDebug;
 import br.com.base2.arquivo.test.result.LogTestResult;
 import br.com.base2.auxiliar.Login;
 import br.com.base2.entidades.Caso;
+import br.com.base2.entidades.Categoria;
+import br.com.base2.entidades.Perfil;
+import br.com.base2.entidades.Projeto;
 
 
 public class TST_002_01_RelatarCasoCamposObgPreenchidos {
   
 	private WebDriver driver;
 	private StringBuffer verificationErrors = new StringBuffer();
-	private Login login;
 	private LogDebug loggerDebug;
 	private LogTestResult loggerTestResult;	
-	private Caso caso;
 	private Boolean casoEncontrado;
+	private Login login;
+	private Caso caso;
+	private Projeto projeto;
+	private Perfil perfil;
+	private Categoria categoria;	 
 		
 	
 	@Before
@@ -30,8 +36,11 @@ public class TST_002_01_RelatarCasoCamposObgPreenchidos {
 		this.login = new Login();
 		this.loggerDebug = new LogDebug(this.getClass());
 		this.loggerTestResult = new LogTestResult(this.getClass());
-		this.caso = new Caso();
 		this.casoEncontrado = false;
+		this.caso = new Caso();
+		this.projeto = new Projeto();
+		this.perfil = new Perfil();
+		this.categoria = new Categoria();		
     
 	}
 
@@ -52,7 +61,7 @@ public class TST_002_01_RelatarCasoCamposObgPreenchidos {
 			driver.findElement(By.cssSelector("a[href='/bug_report_page.php']")).click();
 						
 			//Selecionar Projeto
-			new Select(driver.findElement(By.cssSelector("select[name='project_id']:not([class='small']"))).selectByVisibleText("Luciano Silva´s Project");
+			new Select(driver.findElement(By.cssSelector("select[name='project_id']:not([class='small']"))).selectByVisibleText(projeto.getNome());
 			driver.findElement(By.cssSelector("input[value='Selecionar Projeto']")).click();
 			
 			Thread.sleep(2000);
@@ -67,9 +76,9 @@ public class TST_002_01_RelatarCasoCamposObgPreenchidos {
 			 *	
 			 */
 			
-			new Select(driver.findElement(By.name("category_id"))). selectByVisibleText(caso.getCategoria());
+			new Select(driver.findElement(By.name("category_id"))). selectByVisibleText(categoria.getTipo());
 			new Select(driver.findElement(By.name ("severity"))).selectByVisibleText(caso.getGravidade());
-			new Select(driver.findElement(By.name("profile_id"))).selectByVisibleText(caso.getPerfil());
+			new Select(driver.findElement(By.name("profile_id"))).selectByVisibleText(perfil.getTipo());
 			driver.findElement(By.name("summary")).sendKeys(caso.getResumo());
 			driver.findElement(By.name("description")).sendKeys(caso.getDescricao());
 			
@@ -89,17 +98,13 @@ public class TST_002_01_RelatarCasoCamposObgPreenchidos {
 			List<WebElement> td = tabela.findElements(By.cssSelector("td"));
 			
 			 for (WebElement linha : td) {
-				// System.out.println(linha.getText());
 				 
 				 if( linha.getText().equalsIgnoreCase(caso.getResumo())){
 					 casoEncontrado = true;
-					 System.out.println(linha.getText());
 					 break;
 				 }
 			 }
-
-			 	
-					
+			
 			
 			try{
 				

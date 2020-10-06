@@ -11,17 +11,19 @@ import br.com.base2.arquivo.debug.LogDebug;
 import br.com.base2.arquivo.test.result.LogTestResult;
 import br.com.base2.auxiliar.Login;
 import br.com.base2.entidades.Caso;
+import br.com.base2.entidades.Projeto;
 
 
 public class TST_003_01_ConsultarCasoDeProjetoPorResumo {
   
 	private WebDriver driver;
 	private StringBuffer verificationErrors = new StringBuffer();
-	private Login login;
 	private LogDebug loggerDebug;
-	private LogTestResult loggerTestResult;
-	private Caso caso;
+	private LogTestResult loggerTestResult;	
 	private boolean casoEncontrado;
+	private Login login;
+	private Caso caso;
+	private Projeto projeto;
 		
 	
 	@Before
@@ -30,8 +32,9 @@ public class TST_003_01_ConsultarCasoDeProjetoPorResumo {
 		this.login = new Login();
 		this.loggerDebug = new LogDebug(this.getClass());
 		this.loggerTestResult = new LogTestResult(this.getClass());
+		this.casoEncontrado = false;
 		this.caso = new Caso();
-		casoEncontrado = false;
+		this.projeto = new Projeto();
     
 	}
 
@@ -50,7 +53,7 @@ public class TST_003_01_ConsultarCasoDeProjetoPorResumo {
 			 * Selecionar Projeto Especifico
 			 * @param Luciano Silva's Project
 			 */
-			new Select(driver.findElement(By.cssSelector("select[name='project_id']"))).selectByVisibleText("Luciano Silva´s Project");
+			new Select(driver.findElement(By.cssSelector("select[name='project_id']"))).selectByVisibleText(projeto.getNome());
 					
 			//Menu Ver Casos		
 			driver.findElement(By.cssSelector("a[href='/view_all_bug_page.php']")).click();
@@ -69,7 +72,6 @@ public class TST_003_01_ConsultarCasoDeProjetoPorResumo {
 				 
 				 if( linha.getText().equalsIgnoreCase(caso.getResumo())){
 					 casoEncontrado = true;
-					 System.out.println(linha.getText());
 					 break;
 				 }
 			 }
