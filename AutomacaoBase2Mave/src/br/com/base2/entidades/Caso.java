@@ -10,6 +10,7 @@ public class Caso {
 	private String descricao;
 	private String msgErroRelatarCasoSemResumo;
 	private String Id;
+	private String marcador;
 	
 	public Caso() {
 		
@@ -25,6 +26,7 @@ public class Caso {
 				+ " suas entradas.";
 		
 		this.Id = "0004901";
+		marcador = "testeBase2";
 		
 		
 		
@@ -92,6 +94,14 @@ public class Caso {
 
 	public void setId(String id) {
 		Id = id;
+	}
+
+	public String getMarcador() {
+		return marcador;
+	}
+
+	public void setMarcador(String marcador) {
+		this.marcador = marcador;
 	}
 	
 	

@@ -1,4 +1,4 @@
-package TST_003_ConsultarCaso;
+package TST_004_AplicarMarcador;
 
 
 import org.junit.*;
@@ -12,7 +12,7 @@ import br.com.base2.auxiliar.Login;
 import br.com.base2.entidades.Caso;
 
 
-public class TST_003_01_ConsultarCasoDeProjetoPorResumo {
+public class TST_004_01_AplicarMarcador {
   
 	private WebDriver driver;
 	private StringBuffer verificationErrors = new StringBuffer();
@@ -20,8 +20,8 @@ public class TST_003_01_ConsultarCasoDeProjetoPorResumo {
 	private LogDebug loggerDebug;
 	private LogTestResult loggerTestResult;
 	private Caso caso;
-	private boolean casoEncontrado;
-		
+	private Boolean marcadorAplicado;
+			
 	
 	@Before
 	public void setUp() throws Exception {		
@@ -30,8 +30,8 @@ public class TST_003_01_ConsultarCasoDeProjetoPorResumo {
 		this.loggerDebug = new LogDebug(this.getClass());
 		this.loggerTestResult = new LogTestResult(this.getClass());
 		this.caso = new Caso();
-		casoEncontrado = false;
-    
+		this.marcadorAplicado = false;
+		    
 	}
 
 	
@@ -42,23 +42,21 @@ public class TST_003_01_ConsultarCasoDeProjetoPorResumo {
 		    
 		try{
 			
-			driver = login.executaLogin();
-				
+			driver = login.executaLogin();				
 			
 			/*
 			 * Selecionar Projeto Especifico
 			 * @param Luciano Silva's Project
 			 */
 			new Select(driver.findElement(By.cssSelector("select[name='project_id']"))).selectByVisibleText("Luciano Silva´s Project");
-					
-			//Menu Ver Casos		
+		
+			//Menu Ver Casos
 			driver.findElement(By.cssSelector("a[href='/view_all_bug_page.php']")).click();
 		
-			
 			/*
-			 * Consultar Caso por Resumo
+			 * Selecionar o caso especifico
+			 * @param  "0004901
 			 */
-			
 			WebElement tabela = driver.findElement(By.id("buglist"));				
 			List<WebElement> tr = tabela.findElements(By.cssSelector("tr"));
 			List<WebElement> td = tabela.findElements(By.cssSelector("td"));
@@ -66,30 +64,56 @@ public class TST_003_01_ConsultarCasoDeProjetoPorResumo {
 			 for (WebElement linha : td) {
 				// System.out.println(linha.getText());
 				 
-				 if( linha.getText().equalsIgnoreCase(caso.getResumo())){
-					 casoEncontrado = true;
+				 if( linha.getText().equalsIgnoreCase(caso.getId())){
+					 
 					 System.out.println(linha.getText());
+					 linha.click();
 					 break;
 				 }
 			 }
 			
-															
+			 
+			 
+			 /*
+			  * Aplicar marcador
+			  * @param  "testeBase2"
+			  */
+			 new Select(driver.findElement(By.id("tag_select"))).selectByVisibleText(caso.getMarcador());
+			 driver.findElement(By.cssSelector("input[value='Aplicar']")).click();
+			  
+			//Consultar Caso com marcador 	
+			WebElement tabelaValidador = driver.findElement(By.cssSelector("table.width100:nth-child(6)"));
+			
+			List<WebElement> trValidador = tabelaValidador.findElements(By.cssSelector("tr"));
+			List<WebElement> tdValidador = tabelaValidador.findElements(By.cssSelector("td"));
+			
+			 for (WebElement linha : tdValidador) {
+				 //System.out.println(linha.getText());
+				 
+				if( linha.getText().equalsIgnoreCase(caso.getMarcador())){
+					 this.marcadorAplicado = true;
+					 System.out.println(linha.getText());
+					 break;
+				 }
+				 			 
+			 }
+			 
+			 
+			 
 			Thread.sleep(2000);
 
 			
 			try{
-			
-				
-				assertTrue(casoEncontrado);
+				assertTrue(marcadorAplicado);
 				loggerTestResult.testResult("Aprovado");
 				
-			}catch (AssertionError erroValidaConsultarCasoDeProjetoPorResumo){
+			}catch (AssertionError erroValidaAplicarMarcador){
     		
-				loggerDebug.debug("Erro ao Executar o caso de Teste: " + erroValidaConsultarCasoDeProjetoPorResumo);
+				loggerDebug.debug("Erro ao Executar o caso de Teste: " + erroValidaAplicarMarcador);
     			loggerTestResult.testResult("Reprovado");
     			
     			//Avisa a api junit sobre o erro no caso de teste
-    			throw erroValidaConsultarCasoDeProjetoPorResumo;
+    			throw erroValidaAplicarMarcador;
 			
     		}finally{
     

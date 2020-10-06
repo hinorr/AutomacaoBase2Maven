@@ -44,15 +44,14 @@ public class TST_003_02_ConsultarCasoPorID {
 			
 			driver = login.executaLogin();
 				
-			
-			
+			/*
+			 * Consultar Caso por ID
+			 * @param "0004901"
+			 */
 			driver.findElement(By.name("bug_id")).sendKeys(caso.getId());
 			driver.findElement(By.cssSelector("input[value='Ir para']")).click();
-			
-			
+						
 			Thread.sleep(2000);
-			
-			
 				
 			
 			//WebElement tabela = driver.findElement(By.id("buglist"));
@@ -63,8 +62,6 @@ public class TST_003_02_ConsultarCasoPorID {
 			
 			 for (WebElement linha : td) {
 				 //System.out.println(linha.getText());
-				 
-				
 				 
 				if( linha.getText().equalsIgnoreCase(caso.getId())){
 					 casoEncontrado = true;
@@ -81,7 +78,6 @@ public class TST_003_02_ConsultarCasoPorID {
 			try{			
 				
 				assertTrue(casoEncontrado);
-				//Validação da mensagem
 				loggerTestResult.testResult("Aprovado");
 				
 			}catch (AssertionError erroValidaMensagemConsultarCasoPorID){

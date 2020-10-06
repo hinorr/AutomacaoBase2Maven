@@ -15,3 +15,12 @@ TST_002_02_RelatarCasoCamposObgNaoPreenchidos
 
 TST_003_01_ConsultarCasoDeProjetoPorResumo
 	1. Ter cadastrado no sistema um caso com a descrição "Botão Desligar não é exibido" para o projeto ""Luciano Silva's Project""
+
+TST_003_02_ConsultarCasoPorID
+	1. Ter cadastrado no sistema um caso com o id "0004901"
+	
+TST_004_01_AplicarMarcador
+	1. Ter cadastrado no sistema um caso com o id "0004901"  sem nenhum marcado adicionado
+	2. Ter um marcador cadastrado no sistema do tipo "testeBase2"
+	
+	
